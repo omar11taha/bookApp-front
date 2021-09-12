@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
-// import axios from 'axios';
+import axios from 'axios';
 
 export class Books extends Component {
 
@@ -14,16 +14,16 @@ export class Books extends Component {
 
   
 
-  // componentDidMount = () => {
+  componentDidMount = () => {
     
 
-  //   axios.get(`${process.env.REACT_APP_API_URL}/book`).then((bookResponse) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/book`).then((bookResponse) => {
 
-  //     this.setState({ BooksData: bookResponse.data });
-  //   }).bookch(error => alert(error.message));
+      this.setState({ BooksData: bookResponse.data });
+    }).catch(error => alert(error.message));
 
 
-  // }
+  }
 
   render() {
     return (
